@@ -32,14 +32,25 @@ function setup() {
 }
 
 function draw() {
-  background(51);
-  for(var i=0;i<particles.length;i++){
+  background(255);
+  for(var i=0;i<particles.length;i+=2){
+var pt = particles[i];
+for(var j=0;j<particles.length;j+=2){
+  var other = particles[j];
+    if(pt!=other){
+        var d = pt.pos.dist(other.pos);
 
-    var pt = particles[i];
+        if(d<=25){
+
+          line(pt.pos.x,pt.pos.y,other.pos.x,other.pos.y);
+
+        }
+      }
+    }
     pt.behaviors();
     pt.update();
     pt.show();
 
-
   }
+
 }
