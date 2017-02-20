@@ -4,7 +4,7 @@ function Particle(x, y){
   this.target = createVector(x,y);
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
-  this.maxSpeed = 5;
+  this.maxSpeed = 10;
   this.maxForce = 0.3;
 }
 
@@ -74,7 +74,7 @@ Particle.prototype.flee = function(target){
 
 Particle.prototype.show = function(){
 
-  fill(255);
-    ellipse(this.pos.x,this.pos.y,5,5);
+//   fill(255);
+    ellipse(this.pos.x,this.pos.y,1,1);
 
 }
